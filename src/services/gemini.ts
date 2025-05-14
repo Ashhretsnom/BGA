@@ -83,6 +83,7 @@ export async function getGeminiResponse(prompt: string): Promise<string> {
       }
     }
 
-    return "I apologize, but I'm having trouble connecting to my knowledge base right now. Please try again later.";
+    // Return more detailed error message to help with debugging
+    return `I apologize, but I'm having trouble connecting to my knowledge base right now. Please try again later. (Error: ${error instanceof Error ? error.message : "Unknown error"})`;
   }
 }
